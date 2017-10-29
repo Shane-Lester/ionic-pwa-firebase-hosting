@@ -1,29 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Bookmark</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-grid>
     <ion-row align-items-start>
-      <ion-col *ngFor="let article of articles | async" col-12 col-md-6 col-lg-4 col-xl-3>
+      <ion-col *ngFor="let article of articleList" col-12 col-md-6 col-lg-4 col-xl-3>
         <ion-card>
           <ion-card-header>
-            <h2>{{ article.title }}</h2>
+            <h2>{{ article?.title }}</h2>
           </ion-card-header>
           <img [src]="article.urlToImage" height="190" />
           <ion-card-content>
             <p>
-              {{ article.description | slice:0:150 }}...
+              {{ article?.description | slice:0:150 }}...
             </p>
           </ion-card-content>
           <ion-row>
             <ion-col>
-              <button ion-button icon-left clear small (click)="bookmarkArticle(article)">
-                <ion-icon name="bookmark" [class.bookmarked]="article.bookmarked[userId]"></ion-icon>
-                <span *ngIf="article.bookmarked[userId]">Bookmarked</span>
-                <span *ngIf="!article.bookmarked[userId]">Bookmark it!</span>
+              <button ion-button icon-left clear small (click)="removeBookmark(article.id)">
+                <ion-icon name="bookmark" class="bookmarked"></ion-icon>
+                <span>Bookmarked</span>
               </button>
             </ion-col>
             <ion-col>
