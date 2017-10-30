@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  AlertController
-} from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { Observable } from 'rxjs';
 
