@@ -5,8 +5,6 @@ import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
 import { AngularFireModule } from 'angularfire2';
@@ -32,8 +30,6 @@ import { firebaseConfig } from './credentials';
     TabsPage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     FirebaseProvider
   ]
