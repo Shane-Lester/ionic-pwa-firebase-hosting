@@ -1,3 +1,17 @@
 page-article-detail {
+    img {
+        max-height: 300px;
+    }
+    ion-row {
+      ion-row {
+        padding: 16px;
+      }
+      ion-card {
+        margin: 0 !important;
+      }
+    }
+    input {
+      width: 100% !important;
+    }
 
 }

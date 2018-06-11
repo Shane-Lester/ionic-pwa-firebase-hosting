@@ -75,4 +75,8 @@ export class FirebaseProvider {
       });
   }
 
+  getArticle(articleId: string): AngularFireObject<any> {
+    return this.afDatabase.object(`articles/${articleId}`);
+  }
+
 }
