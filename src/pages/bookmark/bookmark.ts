@@ -1,36 +1,27 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the BookmarkPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage({
   name: 'bookmark'
 })
 @Component({
   selector: 'page-bookmark',
-  templateUrl: 'bookmark.html'
+  templateUrl: 'bookmark.html',
 })
 export class BookmarkPage {
-  public articleList: {};
-  constructor(
-    public navCtrl: NavController,
-    public firebaseProvider: FirebaseProvider
-  ) {}
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
   ionViewDidLoad() {
-    this.firebaseProvider
-      .getBookmarkedArticles()
-      .valueChanges()
-      .subscribe(bookmarkedArticleList => {
-        this.articleList = bookmarkedArticleList;
-      });
+    console.log('ionViewDidLoad BookmarkPage');
   }
 
-  articleDetail(articleId: string): void {
-    this.navCtrl.push('article-detail', {
-      id: articleId
-    });
-  }
-
-  removeBookmark(articleId: string): void {
-    this.firebaseProvider.removeBookmark(articleId);
-  }
 }

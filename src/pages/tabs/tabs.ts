@@ -7,5 +7,5 @@ export class TabsPage {
   tab1Root = 'home';
   tab2Root = 'bookmark';
 
-  constructor() {}
+  constructor() { }
 }

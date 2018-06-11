@@ -15,7 +15,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { firebaseConfig } from './credentials';
 
 @NgModule({
-  declarations: [MyApp, TabsPage],
+  declarations: [
+    MyApp,
+    TabsPage
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
@@ -24,7 +27,10 @@ import { firebaseConfig } from './credentials';
     AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, TabsPage],
+  entryComponents: [
+    MyApp,
+    TabsPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -32,4 +38,4 @@ import { firebaseConfig } from './credentials';
     FirebaseProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
