@@ -60,4 +60,19 @@ export class FirebaseProvider {
       });
   }
 
+  getBookmarkedArticles(): AngularFireList<any> {
+    return this.afDatabase.list(`userProfile/${this.userId}/articles/`);
+  }
+
+  removeBookmark(articleId: string): Promise<any> {
+    return this.afDatabase
+      .object(`articles/${articleId}/bookmarked/${this.userId}`)
+      .set(null)
+      .then(() => {
+        this.afDatabase
+          .object(`userProfile/${this.userId}/articles/${articleId}`)
+          .remove();
+      });
+  }
+
 }
